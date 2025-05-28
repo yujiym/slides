@@ -1,0 +1,5 @@
+import '@slidev/client/styles/layouts-base.css'
+import '@slidev/theme-default/styles/layouts.css'
+import '@slidev/theme-default/styles/prism.css'
+
+import './custom.css'

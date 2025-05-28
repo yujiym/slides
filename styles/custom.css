@@ -1,0 +1,63 @@
+.slidev-layout {
+  h1 {
+    @apply font-bold font-serif tracking-wide;
+  }
+
+  a {
+    @apply hover:text-teal-400 transition-colors no-underline border-dotted hover:border-teal-400;
+  }
+
+  ul, ol {
+    @apply list-disc list-outside pl-2.5;
+  }
+
+  blockquote {
+    @apply rounded-none border-l-5 border-gray/50 pl-4 bg-gray/5;
+
+    ul, ol {
+      @apply list-disc list-outside pl-2.5 pt-2.5;
+    }
+  }
+
+  li.task-list-item {
+    label > span {
+      @apply hidden!;
+    }
+  }
+
+  blockquote.small {
+    @apply text-xs;
+  }
+
+  blockquote + blockquote {
+    @apply mt-4;
+  }
+
+  p.links {
+    @apply bg-gray-700/80 text-white absolute bottom-0 text-xs px-4 py-1 rounded-full right-4 z-10 leading-5;
+  }
+
+  .marker {
+    text-decoration: underline;
+    text-decoration-thickness: 0.4em;
+    text-decoration-color: rgba(255, 228, 0, 0.4);
+    text-underline-offset: -0.15em;
+    text-decoration-skip-ink: none;
+
+    &.pink {
+      text-decoration-color: rgba(255, 19, 240, 0.4);
+    }
+    &.blue {
+      text-decoration-color: rgba(2, 217, 255, 0.4);
+    }
+    &.green {
+      text-decoration-color: rgba(15, 255, 80, 0.4);
+    }
+  }
+}
+
+.slidev-layout.intro {
+  h1 {
+    @apply text-5xl leading-16 tracking-wider;
+  }
+}
