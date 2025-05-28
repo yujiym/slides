@@ -1,11 +1,16 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# Slide repo build with [Slidev](https://github.com/slidevjs/slidev) hosted on Github Pages
 
-To start the slide show:
+## develop
 
 - `pnpm install`
-- `pnpm dev`
+- `file=${filename} pnpm dev`
 - visit <http://localhost:3030>
+- edit `{filename}.md`
 
-Edit the [slides.md](./slides.md) to see the changes.
+## build & deploy
 
-Learn more about Slidev at the [documentation](https://sli.dev/).
+- set `homepage` to `package.json`
+- `file=${filename} pnpm run build`
+- `file=${filename} pnpm run deploy`
+- visit <`${homepage}/${filename}`>
+  - e.g. `https://yujiym.github.io/slides/eth-meetup-tokyo-vol14/`
