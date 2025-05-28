@@ -1,4 +1,5 @@
 ---
+routerMode: hash
 # You can also start simply with 'default'
 theme: default
 # random image from a curated Unsplash collection by Anthony
@@ -42,7 +43,7 @@ layout: intro
 
 ---
 layout: image-left
-image: /pectra-summary.webp
+image: /assets/pectra-summary.webp
 ---
 
 #### Post Pectra{class="font-serif"}
@@ -175,7 +176,7 @@ From ZeroDev's posts:
 - Passkeys: Stored in the user's secure enclave, dApps cannot determine whether an account already exists. (Signup or Signin) -> improved with App Session.
 </div>
 
-<img src="/onchainkit-wallet.png" class="w-1/3 h-full absolute right-0 top-0"
+<img src="/assets/onchainkit-wallet.png" class="w-1/3 h-full absolute right-0 top-0"
   loading="eager"
 />
 
@@ -266,11 +267,11 @@ app.use(paymentMiddleware(
 <div class="grid grid-cols-2 gap-4">
   <div>
     <code>https://epo.im/p/73WakrfVbNJBaAmhQtEeDv</code>
-    <img src="/x402-demo0.png" class="w-4/5" />
+    <img src="/assets/x402-demo0.png" class="w-4/5" />
   </div>
   <div>
     <code>https://epo.im/p/73WakrfVbNJBaAmhQtEeDv/protected</code>
-    <img src="/x402-demo1.png" class="w-4/5" />
+    <img src="/assets/x402-demo1.png" class="w-4/5" />
   </div>
 </div>
 

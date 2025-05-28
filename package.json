@@ -1,12 +1,12 @@
 {
-  "name": "eth-meetup-tokyo-vol14",
+  "name": "slides",
   "type": "module",
-  "private": true,
+  "homepage": "https://yujiym.github.io/slides",
   "scripts": {
-    "build": "slidev build ${file}.md --out dist/${file} --base /${file}/",
-    "deploy": "$npm_exec wrangler deploy",
-    "dev": "slidev --open",
-    "export": "slidev export",
+    "build": "slidev build ${file}.md --out dist --base /slides/${file}/",
+    "deploy": "$npm_exec gh-pages -d dist -b gh-pages -e \"${file}\"",
+    "dev": "slidev ${file}.md --open",
+    "export": "slidev ${file}.md export",
     "preview": "$npm_exec vite preview"
   },
   "dependencies": {
@@ -16,6 +16,9 @@
     "@vueuse/core": "^13.2.0",
     "motion-v": "^1.1.1",
     "vue": "^3.5.14"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   },
   "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
