@@ -33,6 +33,15 @@ fonts:
   dot: DotGothic16
   weights: 400, 700
   italic: true
+seoMeta:
+  ogTitle: EIP-7702, x402 and Future Prospects of Crypto UX
+  ogDescription: Slide at Ethereum Meetup Tokyo Vol.14
+  ogImage: https://yujiym.github.io/slides/eth-meetup-tokyo-vol14/assets/14/ogp.png
+  ogUrl: https://yujiym.github.io/slides/eth-meetup-tokyo-vol14
+  twitterCard: summary_large_image
+  twitterTitle: EIP-7702, x402 and Future Prospects of Crypto UX
+  twitterDescription: Slide at Ethereum Meetup Tokyo Vol.14
+  twitterImage: https://yujiym.github.io/slides/eth-meetup-tokyo-vol14/assets/14/ogp.png
 layout: intro
 ---
 
@@ -43,7 +52,7 @@ layout: intro
 
 ---
 layout: image-left
-image: /assets/pectra-summary.webp
+image: /assets/14/pectra-summary.webp
 ---
 
 #### Post Pectra{class="font-serif"}
@@ -129,7 +138,7 @@ From ZeroDev's posts:
 
 </div>
 
-<div class="bg-[url(/assets/porto-features.png)] absolute h-full top-0 right-0 w-3/8 bg-contain bg-no-repeat" />
+<div class="bg-[url(/assets/14/porto-features.png)] absolute h-full top-0 right-0 w-3/8 bg-contain bg-no-repeat" />
 <p class="links z-10">🔗<a href="https://porto.sh/">porto.sh</a></p>
 
 ---
@@ -182,7 +191,7 @@ From ZeroDev's posts:
 - Cross-chain replayability for owner updates and other actions: sign once, update everywhere.
 </div>
 
-<img src="/assets/onchainkit-wallet.png" class="w-1/3 h-full absolute right-0 top-0"
+<img src="/assets/14/onchainkit-wallet.png" class="w-1/3 h-full absolute right-0 top-0"
   loading="eager"
 />
 
@@ -275,15 +284,15 @@ app.use(paymentMiddleware(
     For example, since they are just HTML headers, they can only return minimal fallback HTML.<br>
     Customization is necessary to sell products or provide a rich experience.
     <code class="mt-4 text-xs!">https://x402.org/ptrotected</code>
-    <img src="/assets/x402-protected.png" class="mt-4" />
+    <img src="/assets/14/x402-protected.png" class="mt-4" />
   </div>
   <div>
     <code class="text-xs!">https://*/p/73WakrfVbNJBaAmhQtEeDv</code>
-    <img src="/assets/x402-demo0.png" class="mt-2 w-4/5" />
+    <img src="/assets/14/x402-demo0.png" class="mt-2 w-4/5" />
   </div>
   <div>
     <code class="text-xs!">https://*/p/73WakrfVbNJBaAmhQtEeDv/protected</code>
-    <img src="/assets/x402-demo1.png" class="mt-2 w-4/5" />
+    <img src="/assets/14/x402-demo1.png" class="mt-2 w-4/5" />
     <p class="text-sm">Separate protected content url and query API if x402 payment verified</p>
   </div>
 </div>
