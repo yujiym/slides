@@ -5,7 +5,7 @@
 - `pnpm install`
 - `file=${filename} pnpm dev`
 - visit <http://localhost:3030>
-- edit `{filename}.md`
+- edit `${filename}.md`
 
 ## build & deploy
 

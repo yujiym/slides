@@ -102,6 +102,7 @@ From ZeroDev's posts:
   <Tweet id="1925116235064254772" scale="0.7" />
 </div>
 
+<iframe src="https://support.metamask.io/configure/accounts/switch-to-or-revert-from-a-smart-account/" class="w-1/2 h-full absolute right-0 top-0" loading="eager" />
 <p class="links">🔗<a href="https://support.metamask.io/configure/accounts/switch-to-or-revert-from-a-smart-account/">How to switch to or revert from a smart account</a></p>
 
 ---
@@ -112,6 +113,24 @@ From ZeroDev's posts:
 
 <p class="links z-10">🔗<a href="https://swiss-knife.xyz/7702beat">7702 Beat</a></p>
 
+---
+
+# Porto + Account
+
+<div class="w-5/8">
+
+- EIP-7702 based smart account, Multisig?
+  - [PortoAccount.sol](https://github.com/ithacaxyz/account/blob/main/src/PortoAccount.sol)
+    - A keychain that holds user funds, enforces permissions via Keys, manages nonces to prevent replay attacks, and enables secure executions from the account
+  - [Orchestrator.sol](https://github.com/ithacaxyz/account/blob/main/src/Orchestrator.sol)
+    - The Orchestrator is a privileged contract that facilitates trustless interactions between the relay and the account.
+- Opening iframe dialog: `https://stg.id.porto.sh/`
+  - Passkeys: Per domain authorization, Stored in user's secure enclave, dApps cannot determine whether an account already exists. (Signup or Signin) -> improved with app Session
+
+</div>
+
+<div class="bg-[url(/assets/porto-features.png)] absolute h-full top-0 right-0 w-3/8 bg-contain bg-no-repeat" />
+<p class="links z-10">🔗<a href="https://porto.sh/">porto.sh</a></p>
 
 ---
 
@@ -137,26 +156,14 @@ From ZeroDev's posts:
 - [ ] Account Recovery & Identity: Using ZK (Email, OAUth, Passport) and more.
 </blockquote>
 
-<p class="links z-10">🔗<a href="https://github.com/ithacaxyz/account?tab=readme-ov-file#features-out-of-the-box">Accoout | ithaca.xyz</a></p>
-
----
-
-# Porto + Account
-
-- Opening iframe dialog: `https://stg.id.porto.sh/`
-- Passkeys: Per domain authorization
-- Passkeys: Stored in the user's secure enclave, dApps cannot determine whether an account already exists. (Signup or Signin) -> improved with App Session.
-
-<iframe src="https://porto.sh/" class="w-1/3 h-full absolute right-0 top-0"
-  loading="eager"
-/>
-
-<p class="links z-10">🔗<a href="https://porto.sh/">porto.sh</a></p>
+<p class="links z-10">🔗<a href="https://github.com/ithacaxyz/account?tab=readme-ov-file#features-out-of-the-box" taeget="_blank" rel="noreferrer">Accoout | ithaca.xyz</a></p>
 
 
 ---
 
-# Gelato EIP-7702 DEMO Impl
+# Gelato EIP-7702 DEMO implatation
+
+- 👀 Please check articles
 
 <p class="links z-10">🔗<a href="https://mirror.xyz/0xtomo.eth/lHXc3RyTDrszpgRxxCOMYTLIWqEj4xtWJH5_DEwyIag">EIP-7702凄すぎ説 — 0xtomo</a>, 🔗<a href="https://github.com/gelatodigital/gelato-eip-7702-demo/">gelatodigital/gelato-eip-7702-demo
 </a></p>
@@ -167,13 +174,12 @@ From ZeroDev's posts:
 
 <div class="w-2/3 pr-6">
 
+- ERC-4337 based Smart Account (No EIP-7702)
+  - [CoinbaseSmartWallet.sol](https://github.com/coinbase/smart-wallet/blob/main/src/CoinbaseSmartWallet.sol)
+- Multiple Owners: Passkey owners and Ethereum address owners
+  - [MultiOwnable.sol](https://github.com/coinbase/smart-wallet/blob/main/src/MultiOwnable.sol)
 - Opening popup window: `https://keys.coinbase.com/`
-- Multiple Owners
-- Passkey owners and Ethereum address owners
 - Cross-chain replayability for owner updates and other actions: sign once, update everywhere.
-- No EIP-7702 Support atm
-- Passkeys: Per domain authorization
-- Passkeys: Stored in the user's secure enclave, dApps cannot determine whether an account already exists. (Signup or Signin) -> improved with App Session.
 </div>
 
 <img src="/assets/onchainkit-wallet.png" class="w-1/3 h-full absolute right-0 top-0"
@@ -213,15 +219,15 @@ From ZeroDev's posts:
 || __Traditional Payment__ | __Crypto__ | __x402__ |
 | ---- | ---- | ---- | ---- |
 | Buyer | Credit cards, Bank debits,<br> Bank tranfers, Vouchers,<br> Payment providers<br>(apple pay, google pay...) | Wallet address<br>-> Expandable via web3 | Wallet address<br>-> Expandable via web2/web3 |
-| Buyer KYC | Payment vendor | - | - |
+| Buyer KYC | <span class="marker">Payment vendor</span> | - | - |
 | Seller | Bank account | Wallet address<br>-> Expandable via web3 | Wallet address<br>-> Expandable via web2/web3 |
-| Seller KYC | Payment vendor | - | - |
+| Seller KYC | <span class="marker">Payment vendor</span> | - | - |
 | Fee | 3.6% | tx gas fee | tx gas fee (0: USDC on BASE) |
-| Payment verification | Payment vendor | Blockchain | <span class="marker">Facilitator(Blockchain)</span> |
+| Payment verification | <span class="marker">Payment vendor</span> | Blockchain | <span class="marker pink">Facilitator(Blockchain)</span> |
 
 ---
 
-# x402 itself
+# x402 protocol
 
 ### Facilitator Responsibilities
 
@@ -234,7 +240,7 @@ From ZeroDev's posts:
 
 ---
 
-# x402 itself
+# x402 protocol
 
 - Url based payment handling
 - ❌ Subscription -> Need seller server impl
@@ -262,42 +268,50 @@ app.use(paymentMiddleware(
 
 ---
 
-# x402 Impl
+# x402 implementation
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-3 gap-4">
   <div>
-    <code>https://epo.im/p/73WakrfVbNJBaAmhQtEeDv</code>
-    <img src="/assets/x402-demo0.png" class="w-4/5" />
+    For example, since they are just HTML headers, they can only return minimal fallback HTML.<br>
+    Customization is necessary to sell products or provide a rich experience.
+    <code class="mt-4 text-xs!">https://x402.org/ptrotected</code>
+    <img src="/assets/x402-protected.png" class="mt-4" />
   </div>
   <div>
-    <code>https://epo.im/p/73WakrfVbNJBaAmhQtEeDv/protected</code>
-    <img src="/assets/x402-demo1.png" class="w-4/5" />
+    <code class="text-xs!">https://*/p/73WakrfVbNJBaAmhQtEeDv</code>
+    <img src="/assets/x402-demo0.png" class="mt-2 w-4/5" />
+  </div>
+  <div>
+    <code class="text-xs!">https://*/p/73WakrfVbNJBaAmhQtEeDv/protected</code>
+    <img src="/assets/x402-demo1.png" class="mt-2 w-4/5" />
+    <p class="text-sm">Separate protected content url and query API if x402 payment verified</p>
   </div>
 </div>
 
 ---
 
-# x402 Use Cases
+# x402 use cases
 
-### Some services based x402
+### Some services based x402 protocol
 
 - https://h402.xyz/ -> multichain
 - https://catenalabs.com/ -> AI payment
 
 <br>
 
-### Ideas
+### Some ideas / features
 
-- Escrow servise `e.g) mercari, ebay`
-- Access control URL with ERC-20
 - Replace existing payment service with extra-low fee
+- Escrow servise to verify payment /w x402 `e.g) mercari, ebay`
+- Access control with any ERC-20
+- Private IPFS network for file shareing gateway url handling /w x402
 - Native support for Browsers/API Client -> <span class="marker">No need for SDK</span>
 
 ---
 
 # 💬 Final thoughts
 
-<div class="text-3xl pt-5">
+<div class="text-3xl pt-2">
 
 - Blockchain is fundamentally trustless, but for the sake of UX, some degree of trust and reliance on third parties has been inevitable
 - `x402` and `porto` aim to <span class="marker blue">minimize trust points while pushing UX and use cases</span> to the next phase
